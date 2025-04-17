@@ -3,123 +3,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Cours d'escalade 2024–2025</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>Cours d'escalade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Rejoignez nos cours d'escalade pour la saison 2024–2025 !</h1>
-      <p class="subtitle">Pratiquez l’escalade dans un cadre sécurisé et convivial.</p>
-    </div>
+  <header>
+    <h1>Cours d'escalade</h1>
   </header>
-
-  <main class="container">
-    <!-- Pourquoi choisir nos cours -->
-    <section class="section card">
-      <h2>Pourquoi choisir nos cours ?</h2>
-      <ul>
-        <li><strong>Encadrement de qualité :</strong> Moniteurs diplômés et expérimentés.</li>
-        <li><strong>Groupes adaptés :</strong> Débutants, confirmés, performance et compétition.</li>
-        <li><strong>Infrastructures variées :</strong> Gymnase Karine Ruby (Saint‑Pierre‑en‑Faucigny) & Labrunie (La Roche‑sur‑Foron).</li>
-        <li><strong>Ambiance conviviale :</strong> Club animé par des bénévoles passionnés.</li>
-      </ul>
-    </section>
-
-    <!-- Calendrier des inscriptions -->
-    <section class="section card">
-      <h2>Calendrier des Inscriptions</h2>
-      <ul>
-        <li><strong>3–9 mai :</strong> Membres actuels (même créneau).</li>
-        <li><strong>10–16 mai :</strong> Attribution 1<sup>re</sup> vague.</li>
-        <li><strong>17–23 mai :</strong> Membres changeant de cours.</li>
-        <li><strong>24–30 mai :</strong> Attribution.</li>
-        <li><strong>31 mai–6 juin :</strong> File d’attente précédente.</li>
-        <li><strong>7–13 juin :</strong> Attribution.</li>
-        <li><strong>À partir du 14 juin :</strong> Nouveaux membres.</li>
-        <li><strong>À partir du 22 juin :</strong> Attribution nouveaux inscrits.</li>
-      </ul>
-      <p>Toutes les inscriptions démarrent à <strong>10 h</strong> !  
-      <a href="#" class="button">Mode d’emploi des inscriptions</a></p>
-    </section>
-
-    <!-- Nos cours -->
-    <section class="section card">
-      <h2>Nos différents cours</h2>
-      <div class="courses-grid">
-        <div class="course-type">
-          <h3>Classiques</h3>
-          <p>Pour débutants et progression.</p>
-          <p><strong>1 cours / semaine</strong></p>
-        </div>
-        <div class="course-type">
-          <h3>Performance</h3>
-          <p>7–18 ans, entraînement intensif.</p>
-          <ul>
-            <li>2 cours / semaine</li>
-            <li>Sur approbation entraîneurs</li>
-          </ul>
-        </div>
-        <div class="course-type">
-          <h3>Compétition</h3>
-          <p>Jeunes compétiteurs officiels.</p>
-          <ul>
-            <li>2–4 entraînements / semaine</li>
-            <li>Stages vacances scolaires</li>
-            <li>Sur approbation entraîneurs</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tarifs -->
-    <section class="section card">
-      <h2>Tarifs &amp; paiement</h2>
-      <p>Paiement carte bancaire via HelloAsso. Réductions Pass’Sport possibles.</p>
-      <p>Permanences vendredi 19 h–20 h au local (85 rue du Faucigny, La Roche‑sur‑Foron).</p>
-    </section>
-
-    <!-- Porte ouverte -->
-    <section class="section card">
-      <h2>Journée Porte Ouverte</h2>
-      <p><strong>Vendredi 13 juin 19 h 30–20 h 30</strong> au Gymnase Karine Ruby.</p>
-    </section>
-
-    <!-- Inscription -->
-    <section class="section card">
-      <h2>Comment s’inscrire ?</h2>
-      <p>En ligne, demandes complètes (formulaire + paiement) obligatoires.</p>
-      <a href="#" class="button">Accès aux inscriptions</a>
-      <a href="#" class="button outline">Guide Pas‑à‑Pas</a>
-    </section>
-
-    <!-- Contact -->
-    <section class="section card">
-      <h2>Contact &amp; Infos</h2>
-      <p><strong>Questions :</strong> Messagerie interne du site d’inscription.</p>
-      <p><strong>Problème de connexion ?</strong> Envoyez-nous un email.</p>
-      <address>
-        Club Alpin Français - La Roche Bonneville<br>
-        85 rue du Faucigny<br>
-        74800 La Roche‑sur‑Foron
-      </address>
-    </section>
-
-    <!-- Filtre & tableau des cours -->
-    <section class="section card filter-section">
+  <main>
+    <section id="viewerSection">
       <h2>Filtrer les cours</h2>
-      <div class="filters">
+      <div id="filters">
+        <label for="categoryFilter">Catégorie :</label>
         <select id="categoryFilter">
-          <option value="">Sélectionnez une catégorie</option>
+          <option value="">-- Sélectionnez une catégorie --</option>
         </select>
+
+        <label for="monitorFilter">Moniteur :</label>
         <select id="monitorFilter" disabled>
           <option value="all">Tous les moniteurs</option>
         </select>
       </div>
-      <div class="table-responsive hidden" id="coursesTableContainer">
+
+      <div id="coursesTableContainer" class="hidden">
         <table id="coursesTable">
           <thead>
             <tr>
@@ -128,12 +34,13 @@
               <th>Horaire</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <!-- rempli par script.js -->
+          </tbody>
         </table>
       </div>
     </section>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
