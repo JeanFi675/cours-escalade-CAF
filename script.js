@@ -1,5 +1,6 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
+
   const courses = [
     { category: "5 - 6 ans",               monitor: "Raphaël",      schedule: "Mardi 17:00 - 18:30" },
     { category: "5 - 6 ans",               monitor: "Stéphane",     schedule: "Mardi 17:00 - 18:30" },
@@ -30,11 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     { category: "Primaires Débutants",      monitor: "A déterminer", schedule: "Samedi 08:30 - 10:00" }
   ];
 
-  const categoryFilter  = document.getElementById("categoryFilter");
-  const monitorFilter   = document.getElementById("monitorFilter");
-  const tableContainer  = document.getElementById("coursesTableContainer");
-  const tableBody       = document.querySelector("#coursesTable tbody");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const monitorFilter  = document.getElementById("monitorFilter");
+  const coursesTableContainer = document.getElementById("coursesTableContainer");
+  const coursesTableBody = document.querySelector("#coursesTable tbody");
 
+  // Remplir le sélecteur de catégories
   function populateCategories() {
     const cats = [...new Set(courses.map(c => c.category))];
     cats.forEach(cat => {
@@ -45,10 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function populateMonitors(cat) {
+  // Mettre à jour le sélecteur de moniteurs selon la catégorie
+  function populateMonitorsFor(category) {
     monitorFilter.innerHTML = '<option value="all">Tous les moniteurs</option>';
     const mons = [...new Set(
-      courses.filter(c => c.category === cat).map(c => c.monitor.trim())
+      courses
+        .filter(c => c.category === category)
+        .map(c => c.monitor.trim())
     )];
     mons.forEach(m => {
       const opt = document.createElement("option");
@@ -59,43 +64,51 @@ document.addEventListener("DOMContentLoaded", () => {
     monitorFilter.disabled = false;
   }
 
+  // Afficher les cours selon filtres actifs
   function updateTable() {
     const cat = categoryFilter.value;
     const mon = monitorFilter.value;
     if (!cat) {
-      tableContainer.classList.add("hidden");
-      tableBody.innerHTML = "";
+      coursesTableContainer.classList.add("hidden");
+      coursesTableBody.innerHTML = "";
       monitorFilter.disabled = true;
       return;
     }
-    let list = courses.filter(c => c.category === cat);
-    if (mon !== "all") list = list.filter(c => c.monitor.trim() === mon);
 
-    tableBody.innerHTML = "";
-    if (!list.length) {
+    let list = courses.filter(c => c.category === cat);
+    if (mon !== "all") {
+      list = list.filter(c => c.monitor.trim() === mon);
+    }
+
+    coursesTableBody.innerHTML = "";
+    if (list.length === 0) {
       const tr = document.createElement("tr");
       tr.innerHTML = '<td colspan="3">Aucun cours trouvé.</td>';
-      tableBody.appendChild(tr);
+      coursesTableBody.appendChild(tr);
     } else {
       list.forEach(c => {
         const tr = document.createElement("tr");
         tr.innerHTML = `<td>${c.category}</td><td>${c.monitor}</td><td>${c.schedule}</td>`;
-        tableBody.appendChild(tr);
+        coursesTableBody.appendChild(tr);
       });
     }
-    tableContainer.classList.remove("hidden");
+    coursesTableContainer.classList.remove("hidden");
   }
 
+  // Événements
   categoryFilter.addEventListener("change", () => {
-    if (categoryFilter.value) {
-      populateMonitors(categoryFilter.value);
+    const cat = categoryFilter.value;
+    if (cat) {
+      populateMonitorsFor(cat);
       updateTable();
     } else {
       monitorFilter.value = "all";
       updateTable();
     }
   });
+
   monitorFilter.addEventListener("change", updateTable);
 
+  // Initialisation
   populateCategories();
 });
