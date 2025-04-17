@@ -1,6 +1,5 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function() {
-
   const courses = [
     { category: "5 - 6 ans",               monitor: "Raphaël",      schedule: "Mardi 17:00 - 18:30" },
     { category: "5 - 6 ans",               monitor: "Stéphane",     schedule: "Mardi 17:00 - 18:30" },
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
     monitorFilter.disabled = false;
   }
 
-  // Afficher les cours selon filtres actifs
+  // Afficher les cours selon filtres
   function updateTable() {
     const cat = categoryFilter.value;
     const mon = monitorFilter.value;
@@ -106,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
       updateTable();
     }
   });
-
   monitorFilter.addEventListener("change", updateTable);
 
   // Initialisation
