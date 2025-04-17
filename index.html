@@ -10,11 +10,9 @@
     <h1>Cours d'escalade</h1>
   </header>
   <main>
-    <!-- Section affichage pour les visiteurs -->
     <section id="viewerSection">
       <h2>Filtrer les cours</h2>
       <div id="filters">
-        <!-- Ordre : d'abord la catégorie, puis le moniteur -->
         <label for="categoryFilter">Catégorie :</label>
         <select id="categoryFilter">
           <option value="">-- Sélectionnez une catégorie --</option>
@@ -25,7 +23,7 @@
           <option value="all">Tous les moniteurs</option>
         </select>
       </div>
-      <!-- Le tableau des cours s'affiche dès qu'au moins un filtre est actif -->
+
       <div id="coursesTableContainer" class="hidden">
         <table id="coursesTable">
           <thead>
@@ -35,9 +33,7 @@
               <th>Horaire</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- Les cours filtrés seront insérés ici par le JS -->
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </section>
