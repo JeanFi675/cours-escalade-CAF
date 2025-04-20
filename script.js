@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     { category: "Lycéens",                  monitor: "Raphaël",      schedule: "Samedi 10:00 - 12:00" },
     { category: "Collégiens Débutants",     monitor: "Clémentine",   schedule: "Lundi 17:00 - 19:00" },
     { category: "Collégiens Débutants",     monitor: "Raphaël",      schedule: "Samedi 08:00 - 10:00" },
-    { category: "Lycéens",                  monitor: "A déterminer", schedule: "Samedi 10:00 - 12:00" },
+    { category: "Lycéens",                  monitor: "Clem / David / Nico", schedule: "Samedi 10:00 - 12:00" },
     { category: "Primaires Confirmés",      monitor: "Raphaël",      schedule: "Mardi 18:30 - 20:00" },
     { category: "Primaires Confirmés",      monitor: "Stéphane",     schedule: "Mardi 18:30 - 20:00" },
     { category: "Primaires Confirmés",      monitor: "Hugo",         schedule: "Mercredi 18:00 - 19:30" },
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     { category: "Primaires Débutants",      monitor: "Clémentine",   schedule: "Mardi 18:30 - 20:00" },
     { category: "Primaires Débutants",      monitor: "Raphaël",      schedule: "Mercredi 16:30 - 18:00" },
     { category: "Primaires Débutants",      monitor: "David",        schedule: "Vendredi 18:30 - 20:00" },
-    { category: "Primaires Débutants",      monitor: "A déterminer", schedule: "Samedi 08:30 - 10:00" }
+    { category: "Primaires Débutants",      monitor: "Clem / David / Nico", schedule: "Samedi 08:30 - 10:00" }
   ];
 
   const categoryFilter = document.getElementById("categoryFilter");
