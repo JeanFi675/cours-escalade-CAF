@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
     { category: "Primaires Confirmés",      monitor: "Hugo",         schedule: "Mercredi 18:00 - 19:30" },
     { category: "Primaires Confirmés",      monitor: "Raphaël",      schedule: "Mercredi 18:00 - 19:30" },
     { category: "Primaires Confirmés",      monitor: "Clémentine",   schedule: "Mercredi 18:00 - 19:30" },
-    { category: "Primaires Confirmés",      monitor: "David",        schedule: "Vendredi 17:00 - 18:30" },
+    { category: "Primaires Confirmés",      monitor: "David",        schedule: "Vendredi 18:30 - 20:00" },
     { category: "Primaires Débutants",      monitor: "Clémentine",   schedule: "Mardi 18:30 - 20:00" },
     { category: "Primaires Débutants",      monitor: "Raphaël",      schedule: "Mercredi 16:30 - 18:00" },
-    { category: "Primaires Débutants",      monitor: "David",        schedule: "Vendredi 18:30 - 20:00" },
+    { category: "Primaires Débutants",      monitor: "David",        schedule: "Vendredi 17:00 - 18:30" },
     { category: "Primaires Débutants",      monitor: "Clem / David / Nico", schedule: "Samedi 08:30 - 10:00" }
   ];
 
