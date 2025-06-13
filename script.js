@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     { category: "Collégiens Confirmés",     monitor: "Raphaël",      schedule: "Vendredi 17:30 - 19:30" },
     { category: "Collégiens Confirmés",     monitor: "Nicolas",      schedule: "Vendredi 17:30 - 19:30" },
     { category: "Lycéens",                  monitor: "Raphaël",      schedule: "Samedi 10:00 - 12:00" },
-    { category: "Collégiens Débutants",     monitor: "Clémentine",   schedule: "Lundi 17:00 - 19:00" },
+    { category: "Collégiens Confirmés",     monitor: "Clémentine",   schedule: "Lundi 17:00 - 19:00" },
     { category: "Collégiens Débutants",     monitor: "Raphaël",      schedule: "Samedi 08:00 - 10:00" },
     { category: "Lycéens",                  monitor: "Clem / David / Nico", schedule: "Samedi 10:00 - 12:00" },
     { category: "Primaires Confirmés",      monitor: "Raphaël",      schedule: "Mardi 18:30 - 20:00" },
